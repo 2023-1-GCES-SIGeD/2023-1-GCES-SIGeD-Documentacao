@@ -128,7 +128,7 @@ docker network rm siged_backend
 
 ```
 
-Utilizando o `bash`, para executar este _script_, rode o seguinte comando:
+Novamente, execute os scripts diretamente no console, certificando-se de estar na pasta "siged", que contém todos os repositórios clonados:
 
 ### Linux
 
