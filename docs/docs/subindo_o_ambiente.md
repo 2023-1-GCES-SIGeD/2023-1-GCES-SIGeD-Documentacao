@@ -59,21 +59,13 @@ done
 ### Windows
 
 ```batch
-@echo off
-
 docker network create siged_backend
 
-for %%i in (
-    "2021-2-SiGeD-Cargos"
-    "2021-2-SiGeD-Demands"
-    "2021-2-SiGeD-Sectors"
-    "2021-2-SiGeD-Clients"
-    "2021-2-SiGeD-Frontend"
-    "2021-2-SiGeD-Users"
-    "2021-2-SiGeD-Patrimonio"
-) do (
+set "diretorios=2021-2-SiGeD-Cargos 2021-2-SiGeD-Demands 2021-2-SiGeD-Sectors 2021-2-SiGeD-Clients 2021-2-SiGeD-Frontend 2021-2-SiGeD-Users 2021-2-SiGeD-Patrimonio"
+
+for %%i in (%diretorios%) do (
     cd %%i
-    docker-compose --file docker-compose.yml up --detach
+    docker-compose up --detach
     cd ..
 )
 ```
@@ -110,22 +102,15 @@ docker network rm siged_backend
 ### Windows
 
 ```batch
-@echo off
+set "diretorios=2021-2-SiGeD-Cargos 2021-2-SiGeD-Demands 2021-2-SiGeD-Sectors 2021-2-SiGeD-Clients 2021-2-SiGeD-Frontend 2021-2-SiGeD-Users 2021-2-SiGeD-Patrimonio"
 
-for %%i in (
-    "2021-2-SiGeD-Cargos"
-    "2021-2-SiGeD-Demands"
-    "2021-2-SiGeD-Sectors"
-    "2021-2-SiGeD-Clients"
-    "2021-2-SiGeD-Frontend"
-    "2021-2-SiGeD-Users"
-    "2021-2-SiGeD-Patrimonio"
-) do (
-    docker-compose --file ./"%%~i"/docker-compose.yml down
+for %%i in (%diretorios%) do (
+    cd %%i
+    docker-compose down
+    cd ..
 )
 
 docker network rm siged_backend
-
 ```
 
 Novamente, execute os scripts diretamente no console, certificando-se de estar na pasta "siged", que contém todos os repositórios clonados:
