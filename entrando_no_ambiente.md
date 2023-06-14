@@ -65,6 +65,8 @@ Para adicionar JSON basta clicar em BODY -> raw e selecionar JSON.
 ```
 *Modifique os campos `name:`, `email:` e `pass:`.*
 
+*É possível que o banco de dados caia após esse POST, mas não se preocupe, é só subir de novo e continuar com os próximos passos.*
+
 Agora utilize o link [http://localhost:3001/users]() com o verbo GET e busque seus dados, lembrando que se o verify.JWT não for apagado o método vai retornar token invalido. Quando encontrar seus dados copie o seu ID.
 
 Com seu ID em mãos você agora vai utilizar o link [http://localhost:3001/change-password/"seu id aqui"]() com o verbo PUT e colocar o seguinte JSON no BODY
