@@ -19,12 +19,17 @@ docker exec -it backend_clients bash -c "node src/seeders/seedClient.js && node 
 ```cmd
 docker exec -it backend_sector bash -c "node src/seeders/seedSector.js"
 ```
+>Seed de patrimônios
+```cmd
+docker exec -it backend_patrimony bash -c "node src/seeders/seedPatrimony.js"
+```
 Caso seja necessário apagar os dados usando um "docker-compose -rm" e alimentar o banco de forma mais ágil basta fazer um documento ".sh", por exemplo
 >seeding_db.sh
 ```cmd
 docker exec -it backend_demands bash -c "node src/seeders/seedAlerts.js && node src/seeders/seedCategories.js && node src/seeders/seedDemands.js && node src/seeders/seedFiles.js"
 docker exec -it backend_clients bash -c "node src/seeders/seedClient.js && node src/seeders/seedFeature.js && node src/seeders/seedLotacao.js"
 docker exec -it backend_sector bash -c "node src/seeders/seedSector.js"
+docker exec -it backend_patrimony bash -c "node src/seeders/seedPatrimony.js"
 ```
 E rodar no terminal usando:
 ```
